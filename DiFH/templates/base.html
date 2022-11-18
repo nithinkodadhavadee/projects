@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US"><html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DiFH</title>
+    <meta name="description" content="Oolith - A demo project from the course Responsive Web Design in the Browser by Morten Rand-Hendriksen">
+
+    <!-- Stylesheets, inlcuding custom fonts, go here -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic|PT+Sans+Narrow:400,700|Gentium+Basic:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" media="all">
+</head>
+
+<body>
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    <header class="masthead">
+        <div class="site-branding">
+            <h1 class="site-title"><a href="http://localhost:5000/">DiFH</a></h1>
+        </div><!-- .site-title -->
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <!-- Mobile menu toggle button -->
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+            <!-- Main Menu -->
+            <div class="menu-main-menu-container">
+                <ul id="primary-menu" class="nav-menu" aria-expanded="false">
+                    <li class="menu-item current-menu-item"><a href="http://localhost:5000/">Home</a></li>
+                    <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="http://localhost:5000/user" target="_blank">Account</a><button class="dropdown-toggle toggle-on" aria-expanded="true"><span class="screen-reader-text">Collapse child menu</span></button>
+                        <ul class="sub-menu toggled-on">
+                            <li class="menu-item"><a href="http://localhost:5000/login" target="_blank">Log IN</a></li>
+                            <li class="menu-item"><a href="http://localhost:5000/signup" target="_blank">Sign UP</a></li>
+                            <li class="menu-item"><a href="http://localhost:5000/logout" target="_blank">Log Out</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="http://localhost:5000/dash">Dash</a></li>
+            </ul></div>
+        </nav>
+    </header><!-- .masthead -->
+
+
+
+    {% block body %} {% endblock %}
+
+ </body>
+
+    <footer class="footer-area">
+        <div class="widgets">
+            <aside class="widget">
+                <h3 class="widget-title">What is DiFH?</h3>
+                <p>DiFH is a website created for the easy access to the IPFS protocol. It let's you access and use the protocol with no set up or the requirment to write a single line of code. You can host and manage static websites using DiFH at no cost.</p>
+            </aside><!-- .widget -->
+            <aside class="widget">
+                <h3 class="widget-title">Image Credits</h3>
+                <p>The images used in this site are from NASA, published under Public Domain. Each image links to its origin. The full <a href="https://www.flickr.com/photos/projectapolloarchive/" target="_blank">Project Apollo Archive is available on Flickr</a>.</p>
+            </aside><!-- .widget -->
+            <aside class="widget">
+                <h3 class="widget-title">Tools Used</h3>
+                <p>The tools used in the creation of this project demo were:</p>
+                <ul>
+                    <li><a href="http://atom.io" target="_blank">Atom</a></li>
+                    <li><a href="http://emmet.io" target="_blank">IPFS</a></li>
+                    <li><a href="https://www.google.com/chrome" target="_blank">Chrome</a></li>
+                    <li><a href="https://jquery.com" target="_blank">Flask</a></li>
+                </ul>
+            </aside><!-- .widget -->
+        </div><!-- .widgets -->
+    </footer>
+
+    <!-- Scripts for accessible mobile-first navigation -->
+    <script type="text/javascript" src="JS/libs/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="JS/navigation.js"></script>
+
+
+
+</html>

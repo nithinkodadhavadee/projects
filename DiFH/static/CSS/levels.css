@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+Levels
+--------------------------------------------------------------*/
+
+.levels {
+    display: flex;
+    margin-right: -2em;
+    margin-left: -2em;
+    padding: 4em 0 0;
+    background: white;
+}
+
+.level {
+    width: 75%;
+    margin: 0 auto 6em;
+}
+
+.level a {
+    text-decoration: none;
+    color: black;
+}
+
+.level-image {
+    width: 50%;
+    margin: 0 auto;
+    border: 10px solid hsl(0, 0%, 80%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.level a:hover > .level-image,
+.level a:focus > .level-image {
+    border-color: hsl(0, 0%, 60%);
+}
+
+.level-title,
+.level-blurb {
+    text-align: center;
+}
+
+.level-blurb {
+    font-style: italic;
+}
+
+@media screen and (min-width: 650px) {
+    .level {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .level-list {
+        display: flex;
+        max-width: 50em;
+        margin: 2em auto 0;
+        padding: 0 2em;
+    }
+
+    .level {
+        padding: 3em;
+        font-size: 80%;
+    }
+
+    .level-image {
+        width: 60%;
+        margin: 0 auto;
+    }
+}

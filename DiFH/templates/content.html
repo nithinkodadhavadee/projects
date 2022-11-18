@@ -1,0 +1,22 @@
+{% extends'base.html' %}
+{% block body %}
+<div>
+<h1>Web Hosting over Blockchain</h1>
+<h4>Home</h4>
+<div>
+    <!-- <form action="/login" method="post">
+        <label for="uname">User Name:</label>
+        <input type="text" name="username" id="uname"><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password"><br>
+        <input type="submit" value="login">
+
+    </form> -->
+    <a href="http://localhost:5000/dash"> <button>Dash</button></a>
+
+    <div>{% block contentDiv %}
+            {{contentDiv}}
+        {% endblock %}</div>
+</div>
+</div>
+{% endblock %}

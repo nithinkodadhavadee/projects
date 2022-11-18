@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------
+Banner
+--------------------------------------------------------------*/
+
+.banner {
+    margin: -2em -2em 2em;
+    padding: 2em 2em 0;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    background: url('../images/oolith.jpg') top left no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-heading {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2.4em;
+    margin-top: 0;
+}
+
+.banner-text {
+    background: hsla(197, 53%, 64%, .8);
+    padding: 1.5em 2em;
+    margin: 0 -2em;
+}
+
+@media screen and (min-width: 600px) {
+    .centered {
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 2em;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .centered {
+        width: 33em;
+    }
+
+    .banner-heading,
+    .banner-text {
+        width: 50%;
+    }
+
+    .banner-heading {
+        margin-bottom: -.5em;
+    }
+
+    .banner-text {
+        margin-left: 2em;
+    }
+}

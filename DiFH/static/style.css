@@ -1,0 +1,17 @@
+/*
+The primary stylesheet for Flexbox Menu Demo web page. This sheet pulls in all the components in order of appearance.
+*/
+
+@import url('CSS/reset.css');
+@import url('CSS/accessibility.css');
+@import url('CSS/layout.css');
+@import url('CSS/typography.css');
+@import url('CSS/masthead.css');
+@import url('CSS/navigation.css');
+@import url('CSS/images.css');
+@import url('CSS/banner.css');
+@import url('CSS/boxes.css');
+@import url('CSS/intro.css');
+@import url('CSS/levels.css');
+@import url('CSS/footer.css');
+@import url('CSS/single.css');

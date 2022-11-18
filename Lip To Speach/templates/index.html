@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Upload new File</title>
+        <style>
+          body{
+            background: #CCCCCC;
+            position: relative;
+          }
+          .theURLsec {
+            text-align: center;
+            font-size: 30px;
+            border: 5px solid #000000;
+            margin: auto;
+            width: 50%;
+            position: absolute;
+            top: 100px;
+            left: 25%;
+          }
+          li span {
+  position: relative;
+  left: -100px;
+}
+        </style>
+
+    </head>
+    <body>
+        <!-- <h1>Upload new File</h1>
+        <form method=post enctype=multipart/form-data>
+          <input type=file name=file>
+          <input type=submit value=Upload>
+        </form> -->
+        <table>
+          <tr>
+            <td>
+              <div class="theURLsec">
+                <label for="fname">Type in the URL down here</label><br>
+                <input type="text" id="url" name="link" style="height: 30px; width: 200px;">
+                <button onclick="redirectTo()" style="height: 30px;">Open link</button>
+                <br>
+                <!-- <p>
+                  Project Presented By:
+                  <div >
+                    <ul style="list-style-type: none;">
+                      <li>Bharath N(1SB18CS008)</li>
+                      <li>Divya R(1SB18CS017)</li>
+                      <li>Indradhanush B (1SB18CS027)</li>
+                      <li>Kruthika N S(1SB18CS039)</li>
+                    </ul>
+                  </div>
+                </p>  -->
+              </div>
+            </td>
+
+            <!-- <td>
+              <div class="theURLsec" style="top: 450px;">
+                Sri Sairam college of Engineering
+    
+              </div> -->
+            </td>
+          </tr>
+        </table>
+
+
+        <script>
+          function redirectTo(){
+
+            let redirectURL = document.getElementById('url').value;
+            location.replace(redirectURL)            
+          }
+        </script>
+    </body>
+</html>
+
+<!-- <html>
+    <head>
+        <title>try</title>
+    </head>
+    <body>
+
+        <button id="post-btn">I'm a button</button>
+
+        <script>
+            const button = document.getElementById('post-btn');
+
+            button.addEventListener('click', async _ => {
+              try {     
+                const response = await fetch('yourUrl', {
+                  method: 'post',
+                  body: {
+                    // Your body
+                  }
+                });
+                console.log('Completed!', response);
+              } catch(err) {
+                console.error(`Error: ${err}`);
+              }
+            });
+        </script>
+    </body>
+</html> -->

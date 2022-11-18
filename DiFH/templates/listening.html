@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>On Listening - Oolith</title>
+    <meta name="description" content="Oolith - A demo project from the course Responsive Web Design in the Browser by Morten Rand-Hendriksen of Lynda.com"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700italic,700|Alegreya:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+</head>
+
+<body>
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    <header class="masthead">
+        <div class="site-branding">
+            <h1 class="site-title"><a href="index.html">DiFH</a></h1>
+        </div><!-- .site-title -->
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <!-- Mobile menu toggle button -->
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+            <!-- Main Menu -->
+            <div class="menu-main-menu-container">
+                <ul id="primary-menu" class="nav-menu" aria-expanded="false">
+                    <li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
+                    <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="http://lynda.com" target="_blank">Account</a><button class="dropdown-toggle toggle-on" aria-expanded="true"><span class="screen-reader-text">Collapse child menu</span></button>
+                        <ul class="sub-menu toggled-on">
+                            <li class="menu-item"><a href="http://www.lynda.com/Web-Design-training-tutorials/1376-0.html" target="_blank">Log IN</a></li>
+                            <li class="menu-item"><a href="http://www.lynda.com/HTML-training-tutorials/224-0.html" target="_blank">Sign UP</a></li>
+                            <li class="menu-item"><a href="http://www.lynda.com/CSS-training-tutorials/447-0.html" target="_blank">Log Out</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="listening.html">Dash</a></li>
+            </ul></div>
+        </nav>
+    </header><!-- .masthead -->
+
+    <section class="single">
+        <main class="main-area content">
+            <article class="post">
+                <h1 class="post-title">My Connected Device is Listening</h1>
+    			<div class="post-meta">
+                    <div class="author-avatar">
+                        <img alt="" src="images/morten.jpg">
+                    </div>
+                    <span class="byline">by Morten Rand-Hendriksen </span><span class="posted-on">Published <time class="entry-date published" datetime="2015-02-10T16:46:56+00:00">February 10, 2015</time> </span>
+                </div>
+                <div class="post-content">
+                    <p>My Android phones have been listening to me for years. I have no doubt about this. When I started talking about something absurd late last year – “can you use hand lotion to condition a leather chair” – and then decided to look it up on my phone, the first suggestion google makes upon entering “Can you use” was “Can you use hand lotion to condition leather products”. And that’s just one example.</p>
+                    <p>People call me paranoid for saying this, but I’m not. I just understand (or at least pretend I understand) what’s going on inside our connected devices.</p>
+                    <h2>Speech Recognition in the Cloud</h2>
+                    <figure>
+                        <img src="images/satellite.jpg" alt="">
+                        <figcaption>Artist's conception of the NASA deployment of ACTS (Advanced Communication Technology Satellite). Part of NASA Commons,  <a href="https://www.flickr.com/photos/nasacommons/16317497577/in/album-72157650355483458/" target="_blank">available on Flickr</a>.</figcaption>
+                    </figure>
+                    <p>If you have an Android phone with the Google Launcher applied, try this: Turn it on and just say “OK, Google”. This automatically opens the voice to text search box where you can talk to the device and get it to do things like a search or send an email or whatever. It’s amazingly unamazing in a world where rapid technological advancement has made us jaded.</p>
+                    <p>What’s actually happening here is really quite amazing: The phone is constantly listening for specific voice queues, and when they are triggered it starts doing stuff. It gets even more impressive when you start dictating. You can actually see the phone guessing and correcting itself in real time as it does to make sure it gets everything exactly right. And watching this happen it’s clear there is a lot of contextual semantic processing going on out there in the cloud.</p>
+                    <p>What we have here is the dream of speech recognition come true in the cloud. And now that we have it people are (and should be?) terrified.</p>
+                    <h2>The Clash of Dreams and Reality</h2>
+                    <p>In our dreams we want to be able to talk to our devices and have them do our bidding. In Star Trek they had the Universal Translator. You can now get much the same feature by downloading the Google Translate app on your smartphone. Try it. It’s absolutely mind blowing. But for this technology to work we can’t just rely on our phones or computers or TVs. Language is complex and can’t be simplified to algorithms that can run on our local devices. For this technology to work we need the Cloud. And that means literally recording and sending your conversations over the web to a server that then parses the data, gleans the meaning of it, and acts according to your instructions.</p>
+                    <p>In short, when you talk to your device your device needs to actually understand what you are saying. Which is why your Smart TV and your cell phone and probably your computer and any other connected device in your house is in fact listening to you all the time.</p>
+                    <h2>The Question Isn’t If You are Being Recorded, But Who Listens</h2>
+                    <p>Most people will find this revelation rather unsettling, but the reality is this is not new. It’s been going on for years. And it’s a direct response to what we as consumers have been asking for.</p>
+                    <p>The bigger question is who’s listening. The device and service companies are pretty much unanimous in saying they are not recording and not listening. The recordings are purely for the computers. And in a way it is probably believable (unless you are talking about that website that wants to sell your face on a book. They are totally listening). I don’t actually fear the companies (much), but I do question their encryption algorithms.</p>
+                    <p>Post-Snowden we have confirmation of what many of us have known all along: If you put it on the Internet, some intelligence system will be listening in. So does this mean that someone is sitting in a bunker somewhere listening to our conversations while we watch TV, or eat dinner, or chat with our phones within reach? Not unlikely.</p>
+                    <p>Somewhere George Orwell is shaking his head in shame while dictating his next novel through his phone.</p>
+                </div><!-- .post-content -->
+            </article><!-- .post -->
+        </main><!-- .content -->
+    </section><!-- .single -->
+
+    <footer class="footer-area">
+        <div class="widgets">
+            <aside class="widget">
+                <h3 class="widget-title">What is Oolith?</h3>
+                <p>Oolith is a demo website created for the Lynda.com course "Responsive Web Design In the Browser" by Senior Staff Author Morten Rand-Hendriksen. You can use the markup for this website for experimentation, alter it in any way you like, and make it the basis for your own designs.</p>
+            </aside><!-- .widget -->
+            <aside class="widget">
+                <h3 class="widget-title">Image Credits</h3>
+                <p>The images used in this site are from NASA, published under Public Domain. Each image links to its origin. The full <a href="https://www.flickr.com/photos/projectapolloarchive/" target="_blank">Project Apollo Archive is available on Flickr</a>.</p>
+            </aside><!-- .widget -->
+            <aside class="widget">
+                <h3 class="widget-title">Tools Used</h3>
+                <p>The tools used in the creation of this demo project were:</p>
+                <ul>
+                    <li><a href="http://atom.io/" target="_blank">Atom</a></li>
+                    <li><a href="http://emmet.io/" target="_blank">Emmet</a></li>
+                    <li><a href="https://www.google.com/chrome/" target="_blank">Chrome</a></li>
+                    <li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+                    <li><a href="https://www.google.com/fonts/specimen/Arvo" target="_blank">Arvo (font)</a></li>
+                    <li><a href="https://www.google.com/fonts/specimen/Alegreya" target="_blank">Alegreya (font)</a></li>
+                </ul>
+            </aside><!-- .widget -->
+        </div><!-- .widgets -->
+    </footer>
+
+    <script type="text/javascript" src="JS/libs/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="JS/navigation.js"></script>
+</body>
+
+</html>

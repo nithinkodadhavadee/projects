@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------
+Boxes
+--------------------------------------------------------------*/
+
+.box {
+    margin: 0 0 1em;
+}
+
+.box a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: black;
+    background: white;
+    transition: all .2s;
+}
+
+.box a:hover,
+.box a:focus {
+    box-shadow: 0 4px 8px 2px hsla(0, 0%, 70%, .6);
+    transform: scale(1.1);
+}
+
+@media screen and (min-width: 650px) {
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .double {
+        flex: 2 0 100%;
+    }
+
+    .box {
+        display: flex;
+        width: calc(50% - .5em);
+
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .boxes {
+        max-width: 50em;
+        margin: 0 auto;
+    }
+    
+    .box {
+        width: calc(33.333333% - .5em);
+    }
+
+    .double {
+        flex: none;
+    }
+}
