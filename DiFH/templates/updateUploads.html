@@ -21,6 +21,7 @@
     <a href="http://localhost:5000/dash"> <button>Dash</button></a>
 
     <div>
+        Your Hash is hash 
         <table>
             <tr>
                 <!-- <th>Sl. No</th> -->
@@ -37,8 +38,7 @@
                         {% set count = temp+1 %}
                     </td> -->
                     <td> {{ x }} </td>
-                    <td> <a href="http://localhost:5000/returnFile/{{ x }}"><button>Link</button></a> </td>
-                    <td> <a href="http://localhost:5000/updateFile/{{ x }}"><button>Update</button></a> </td>
+                    <td> <a href="http://localhost:5000/returnFile/{{ x }}">Link</a> </td>
                 </tr>
                 {% endfor %}
         </table>

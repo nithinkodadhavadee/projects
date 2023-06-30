@@ -22,7 +22,9 @@
 
     <div>
         <h3>Upload a file</h3>
+        {{ contentDiv }}
         <form method=post enctype=multipart/form-data>
+          <textarea type="text" name="fileName" readonly> {{contentDiv}} </textarea>
           <input type=file name=file>
           <input type=submit value=Upload>
         </form>

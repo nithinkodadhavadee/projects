@@ -3,8 +3,10 @@
 <title>hash</title>
 {% endblock %}
 {% block body %}
-<h1>Web Hosting over Blockchain</h1>
-<h4>uploads</h4>
+<h1>Admin Page</h1>
+<h4>
+    List of all registered users.
+</h4>
 <div>
     <!-- <form action="/login" method="post">
         <label for="uname">User Name:</label>
@@ -14,18 +16,12 @@
         <input type="submit" value="login">
 
     </form> -->
-    <a href="http://localhost:5000/login"> <button>login</button> </a>
-    <a href="http://localhost:5000/signup"> <button>signup</button> </a>
-    <a href="http://localhost:5000/user"> <button>Profile</button> </a>
-    <a href="http://localhost:5000/logout"> <button>Logout</button> </a> <br><br>
-    <a href="http://localhost:5000/dash"> <button>Dash</button></a>
-
     <div>
         <table>
             <tr>
                 <!-- <th>Sl. No</th> -->
-                <th>Hash</th>
-                <th>link</th>
+                <th>User</th>
+                <th></th>
             </tr>
             {% set count = 1 %}
             {% set temp = 1 %}
@@ -36,9 +32,8 @@
                         {% set temp = count %}
                         {% set count = temp+1 %}
                     </td> -->
-                    <td> {{ x }} </td>
-                    <td> <a href="http://localhost:5000/returnFile/{{ x }}"><button>Link</button></a> </td>
-                    <td> <a href="http://localhost:5000/updateFile/{{ x }}"><button>Update</button></a> </td>
+                    <td> {{ x.username }} </td>
+                    <td> <a href="http://localhost:5000/delete/{{ x.id }}"> <button>Delete User</button> </a> </td>
                 </tr>
                 {% endfor %}
         </table>
