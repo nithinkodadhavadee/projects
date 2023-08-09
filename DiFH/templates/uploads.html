@@ -24,23 +24,26 @@
         <table>
             <tr>
                 <!-- <th>Sl. No</th> -->
-                <th>Hash</th>
+                <th></th>
+                <th>Project</th>
                 <th>link</th>
             </tr>
             {% set count = 1 %}
             {% set temp = 1 %}
             {% for x in contentDiv %}
                 <tr>
-                    <!-- <td>
-                        {{ count }}
+                    <!-- {% set count = count+1 %} -->
+                    <td>
+                        <!-- {{ count }}
                         {% set temp = count %}
-                        {% set count = temp+1 %}
-                    </td> -->
+                        {% set count = temp+1 %} -->
+                    </td>
+                    <!-- <td> {{ 1 }} </td> -->
                     <td> {{ x }} </td>
-                    <td> <a href="http://localhost:5000/returnFile/{{ x }}"><button>Link</button></a> </td>
-                    <td> <a href="http://localhost:5000/updateFile/{{ x }}"><button>Update</button></a> </td>
+                    <td> <a href="http://localhost:5000/project/{{ x }}"><button>View Project</button></a> </td>
+                    <!-- <td> <a href="http://localhost:5000/updateFile/{{ x }}"><button>Update</button></a> </td> -->
                 </tr>
-                {% endfor %}
+            {% endfor %}
         </table>
     </div>
 </div>

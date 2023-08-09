@@ -30,8 +30,11 @@ class Todo(db.Model):
 class files(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username=db.Column(db.String(200),nullable=False)
-    # fileName=db.Column(db.String(200),nullable=False)
     hash=db.Column(db.String(500), nullable=False)
+    project=db.Column(db.String(500), nullable=False)
+    version=db.Column(db.String(500), nullable=False)
+    versionName=db.Column(db.String(500), nullable=False)
+    releaseLog=db.Column(db.String(500))
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -164,13 +167,23 @@ def addFile():
         if file.filename == '':
             return render_template('index.html', contentDiv="no file selected")
         if file and allowed_file(file.filename):
+            print("\n\nform input")
+            print(request.form)
+
+
             fileExtension = file.filename.split(".")[-1]
             filename = str(hash(currentUser['username'] + secure_filename(file.filename)))+"."+fileExtension
             print("\n\nuploaded file name:\n", currentUser['username'] + secure_filename(file.filename), "\n\nhash:\n", filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             fHash = filename # uploadFile(filename)
 
-            newHash = files(username = currentUser['username'], hash = fHash)
+            newHash = files(username = currentUser['username'], 
+                            hash = fHash,
+                            project=request.form["project"],
+                            version=request.form["version"],
+                            versionName=request.form["versionName"],
+                            releaseLog=request.form["releaseLog"]
+                            )
 
             try:
                 db.session.add(newHash)
@@ -179,7 +192,7 @@ def addFile():
             except:
                 print("something went wrong")
 
-            return render_template('hash.html', contentDiv=newHash)
+            return render_template('hash.html', contentDiv=fHash)
     else:
         if currentUser['username'] == "":
             contentDiv="Please Login to access the dash"
@@ -197,33 +210,37 @@ def updateFile(fileName):
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
-            return render_template('updateFile.html', contentDiv="no file selected")
-
-        print("\n\n", request.form['fileName'], "\n\n")
-        # print(request)
+            return render_template('index.html', contentDiv="no file selected")
         if file and allowed_file(file.filename):
+            print("\n\nform input")
+            print(request.form)
+
+
             fileExtension = file.filename.split(".")[-1]
             filename = str(hash(currentUser['username'] + secure_filename(file.filename)))+"."+fileExtension
             print("\n\nuploaded file name:\n", currentUser['username'] + secure_filename(file.filename), "\n\nhash:\n", filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             fHash = filename # uploadFile(filename)
 
-            newHash = files(username = currentUser['username'], hash = fHash)
+            newHash = files(username = currentUser['username'], 
+                            hash = fHash,
+                            project=request.form["project"],
+                            version=request.form["version"],
+                            versionName=request.form["versionName"],
+                            releaseLog=request.form["releaseLog"]
+                            )
 
-            print("\n\nmaybe it's just wrong\n\n")
             try:
-                files.query.filter_by(hash=fileName).delete()
-                db.session.commit()
                 db.session.add(newHash)
                 db.session.commit()
                 print("\nHash saved to the database")
             except:
                 print("something went wrong")
 
-            return render_template('hash.html', contentDiv=newHash)
+            return render_template('hash.html', contentDiv=fHash)
 
     elif request.method == 'GET':
-        return render_template('updateFile.html', contentDiv=fileName)
+        return render_template('updateFile.html', contentDiv=fileName, project=fileName)
 
     
 
@@ -234,7 +251,8 @@ def uploads():
     for x in ups:
         print(x.id, '|', x.username, '|', x.hash)
         if x.username == currentUser['username']:
-            toRender.append(x.hash)
+            if x.project not in toRender:
+                toRender.append(x.project)
     print("\n")
     return render_template("uploads.html", contentDiv=toRender)
 
@@ -249,6 +267,30 @@ def returnFile(fileHash):
     # return redirect(url_for('static', filename='uploads/' + fileHash), code=301)
     # return send_from_directory(path = "", directory = "/uploads", filename=fileHash, as_attachment=False)
     return send_file('./uploads/'+fileHash)
+
+
+@app.route("/project/<projectName>", methods=['GET'])
+def project(projectName):
+    print(projectName)
+    ups = files.query.order_by(files.id).all()
+    toRender = []
+    count = 0
+    for x in ups:
+        
+        if x.username == currentUser['username'] and projectName == x.project:
+            print(x.id, '|', x.username, '|', x.hash, '|', x.project, '|', x.version, '|', x.versionName)
+            count = count+1
+            toRender.append({
+                "sl":count,
+                "version": x.version,
+                "versionName": x.versionName,
+                "project": x.project,
+                "releaseLog": x.releaseLog,
+                "hash": x.hash
+            })
+    print("\nobjects sent to render", toRender)
+    return render_template("projectDetails.html", contentDiv=toRender, project=projectName)
+
 
 @app.route('/admin', methods=['POST', 'GET'])
 def admin():
